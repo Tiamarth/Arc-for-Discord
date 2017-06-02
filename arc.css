@@ -1,0 +1,366 @@
+/* I wrote this CSS to make Discord integrate with
+ * the Arc theme for Linux.
+ * 
+ * Author: Tiamarth
+ * 
+ * - thatiamarth+inq@gmail.com
+ * - http://tiamarth.com/
+ * - https://github.com/Tiamarth
+ * 
+ */
+
+:root {
+    --colorPanel: #2f343f;
+    --colorSidebar: #353945;
+    --colorFg: #7a8b94;
+        --colorFgDark: #d3dae3;
+        --colorFgDarker: #767e83;
+    --colorBg: #f5f6f7;
+        --colorBgDark: #3C4351;
+        --colorBgDarker: #2A2d37;
+    --colorContextDark: #3b3e4b;
+    --colorAccent: #5294e2;
+    --colorAccentFg: white;
+    --transitTime: 0.3s;
+        --transitDelay: 0.1s;
+}
+
+a {color: var(--colorAccent);}
+
+.tooltip {background-color: var(--colorAccent);}
+
+/* server panel */
+.guilds-wrapper {background: var(--colorPanel);}
+
+.guild-inner,.guild.selected:before {background-color: var(--colorAccent) !important;}
+
+.guilds-wrapper .guilds-add {background: var(--colorSidebar);}
+
+/* inner panel (sidebar) */
+.account,.search-bar,.guild-header header,.scroller.guild-channels,.private-channels .scroller {
+    background: var(--colorSidebar);
+}
+
+.private-channels .search-bar,.guild-header header {
+    box-shadow: initial;
+    border-bottom: 1px solid var(--colorPanel);
+}
+
+.guild-header header:after {display: none;}
+
+.guild-header.popout-open,
+.guild-header header:hover,
+.guild-header header:active {
+    color: var(--colorAccentFg);
+    background: var(--colorAccent);
+    transition: var(--transitTime);
+    border-radius: 0px;
+}
+
+.icon-friends {background-color: var(--colorAccent) !important;}
+
+.private-channels .channel:hover,
+.private-channels .channel.selected,
+.guild-channels .channel-text.selected,
+.guild-channels .channel-text:hover,
+.guild-channels .channel-voice.selected,
+.guild-channels .channel-voice:hover {
+    color: var(--colorAccentFg);
+    background: var(--colorAccent);
+    transition: var(--transitTime);
+    border-radius: 0px;
+}
+
+.private-channels .channel:before,.guild-channels .channel-text:before {display: none;}
+
+.guild-channels .channel-text .channel-name:before {color: var(--colorFgDark) !important;}
+
+.account {border-top: 1px solid var(--colorPanel);}
+
+.account .btn {
+    background: #383C4A;
+    border-right: 1px solid var(--colorPanel);
+}
+
+.account .btn-group {border: 1px solid var(--colorPanel);}
+
+/* .private-channels .scroller, */
+
+/* toolbar */
+#friends .friends-header,.title-wrap {
+    border-bottom: 1px solid var(--colorPanel) !important;
+    background: var(--colorSidebar) !important;
+}
+
+.chat .title-wrap .title .channel-name,
+.chat .title-wrap .title .channel-name:before {
+    color: var(--colorFgDark);
+}
+
+.chat .title-wrap {
+    border: initial;
+    box-shadow: initial;
+}
+
+#friends .friends-header,
+#friends .friends-header .tab-bar .tab-bar-item {
+    color: var(--colorFgDark) !important;
+}
+
+.header-toolbar .separator.theme-light,
+#friends .friends-header .tab-bar .tab-bar-separator {
+    background-color: #666C78;
+}
+
+#friends .friends-header .tab-bar .tab-bar-item.selected,
+#friends .friends-header .tab-bar .tab-bar-item.tab-bar-item-primary {
+    background: var(--colorAccent) !important;
+}
+
+.search-bar input,
+.search .search-bar,
+.search .DraftEditor-root .public-DraftEditorPlaceholder-root {
+    color: var(--colorFgDarker) !important;
+    background-color: var(--colorBgDarker) !important;
+}
+
+.theme-light .header-toolbar button span {filter: invert(100%) hue-rotate(130deg);}
+
+.toolbar-badge {border: 1px solid rgba(0,0,0,0.3) !important;}
+
+/* chat region and such */
+#friends,#friends .friends-table .friend-table-add-wrapper .friend-table-add-header,.flex-horizontal .flex-spacer {background: var(--colorBg);}
+
+.message-group .message .markup a,.mentioned .mention,.mentioned .mention:hover {color: var(--colorAccent);}
+
+#friends .btn {
+    color: var(--colorAccentFg) !important;
+    background: var(--colorAccent) !important;
+}
+
+.message-group .comment .markup code.inline {
+    font-family: Consolas,Liberation Mono,Menlo,Courier,monospace;
+    font-size: 14px;
+    padding: 2px 8px;
+    border-radius: 0;
+}
+
+.chat .user-name,.system-message .system-message-content a {color: var(--colorAccent) !important;}
+
+.markup code {
+    color: var(--colorFg);
+    font-family: Consolas,Liberation Mono,Menlo,Courier,monospace;
+    background: white;
+    border: solid 1px #e0e0e0;
+}
+
+.message-group .comment .markup pre {border: none;}
+
+.theme-light .hljs {
+    color: var(--colorFg);
+    font-family: Consolas,Liberation Mono,Menlo,Courier,monospace;
+    padding: 2px 8px;
+}
+
+/* pop up dialogues */
+.popout-menu .popout-menu-item {transition-delay: var(--transitDelay);}
+
+.popout-menu .popout-menu-item:hover,.popout-menu .popout-menu-item.invite:hover {
+    color: var(--colorAccentFg);
+    background: var(--colorAccent);
+    transition: var(--transitTime);
+}
+
+.messages-popout-wrap .messages-popout .message-group .action-buttons .jump-button {background: var(--colorAccent) !important;}
+
+.themed-popout .header .subtitle, .theme-dark .themed-popout .text {color: var(--colorAccentFg) !important;}
+
+.user-popout .footer {border: initial;}
+
+.emoji-picker .header .search-bar {border: initial;}
+
+.diversity-selector .popout .item:hover,
+.emoji-picker .scroller .emoji-item.selected {
+    background-color: var(--colorAccent);
+}
+
+.emoji-picker .categories .item.selected {border-bottom-color: var(--colorAccent);}
+
+.emoji-picker .scroller .emoji-item.disabled {-webkit-filter: grayscale(0);}
+
+/* server member sidebar */
+.channel-members {background: var(--colorSidebar) !important;}
+
+.channel-members .member.popout-open,
+.channel-members .member:hover {
+    color: var(--colorAccentFg) !important;
+    background: var(--colorAccent) !important;
+    transition: var(--transitTime);
+    border-radius: 0px;
+}
+
+.channel-members .member,
+.channel-members .member.popout-open {
+    transition-delay: var(--transitDelay);
+}
+
+.channel-members .member:hover .member-activity {color: var(--colorAccentFg);}
+
+/* online status */
+.status-online {background: var(--colorAccent);}
+
+.channel-members .avatar-small .status {border: 1px solid rgba(0,0,0,0.3) !important;}
+
+/* settings dialogue and such */
+.ui-standard-sidebar-view .sidebar-region .scroller {background: var(--colorSidebar);}
+
+.ui-tab-bar.SIDE .ui-tab-bar-item.selected,
+.ui-tab-bar.SIDE .ui-tab-bar-item:hover,
+.ui-tab-bar.SIDE .ui-tab-bar-item:active {
+    color: var(--colorAccentFg);
+    background: var(--colorAccent);
+    transition: var(--transitTime);
+}
+
+.ui-tab-bar.SIDE .ui-tab-bar-item {transition-delay: var(--transitDelay);}
+
+.ui-tab-bar.SIDE .ui-tab-bar-item.brand {color: var(--colorAccent);}
+
+.ui-tab-bar.SIDE .ui-tab-bar-item.brand:hover {color: var(--colorAccentFg);}
+
+._3Mv0RaJ0,
+.ui-slider .slider-bar-fill,
+.ui-switch-checkbox:checked+.ui-switch,
+.ui-card.ui-card-primary.flex-horizontal.margin-bottom-8.checked.editable {
+    background: var(--colorAccent) !important;
+}
+
+/* context menus */
+.context-menu .item:hover,
+.context-menu .item-subMenu:hover {
+    color: var(--colorAccentFg) !important;
+    background: var(--colorAccent) !important;
+    transition: var(--transitTime) !important;
+    border-radius: 0px;
+}
+
+.context-menu .item,
+.context-menu .item-subMenu {
+    transition-delay: var(--transitDelay);
+}
+
+.context-menu.theme-light .item-subMenu,
+.context-menu.theme-dark .item-subMenu {
+    background: url(/assets/e4afe52f6863408a35654a6e5fd69ba9.svg) 155px 50% no-repeat rgba(0,0,0,0) !important;
+}
+
+.context-menu.theme-light .item-subMenu:hover,
+.context-menu.theme-dark .item-subMenu:hover {
+    background: url(/assets/e4afe52f6863408a35654a6e5fd69ba9.svg) 155px 50% no-repeat #5294e2 !important;
+}
+
+/* scrollbars */
+::-webkit-scrollbar {
+    width: 9px !important;
+    height: 9px !important;
+}
+
+::-webkit-scrollbar-track {background-color: transparent !important;}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.35) !important;
+    -webkit-border-radius: 20px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {background: rgba(119,119,119,0.5) !important;}
+
+::-webkit-scrollbar-thumb:active {background: var(--colorAccent) !important;}
+
+.scroller-wrap .scroller::-webkit-scrollbar-thumb,
+.scroller-wrap .scroller::-webkit-scrollbar-track-piece {
+    border: none !important;
+}
+
+.friends-table .scroller-wrap ::-webkit-scrollbar-track-piece,
+.messages-wrapper .scroller-wrap ::-webkit-scrollbar-track-piece {
+    background: transparent !important;
+}
+
+/* dark specific styles */
+/* chat region and such */
+.theme-dark #friends,
+.theme-dark .chat form,
+.theme-dark .chat form .typing,
+.theme-dark .flex-spacer.flex-vertical,
+.theme-dark .ui-standard-sidebar-view .content-region,
+.theme-dark .friends-table, .theme-dark .messages-wrapper,
+.theme-dark #friends .friends-table .friend-table-add-wrapper .friend-table-add-header {
+    background: var(--colorBgDark);
+}
+
+.theme-dark #friends .friends-table .friends-row:hover {background: rgba(153,170,181,.2);}
+
+.theme-dark .messages-wrapper .messages .divider span {background: #474E5B;}
+
+.theme-dark .markup code {
+    color: white;
+    background: #2e3136;
+    border: solid 1px black;
+}
+
+.theme-dark .hljs {
+    color: white;
+    padding: 2px 8px;
+}
+
+.theme-dark .chat form .typing {background-color: var(--colorBg);}
+
+/* pop up dialogues */
+.theme-dark .popout-menu {background: var(--colorBgDark);}
+
+.theme-dark .themed-popout {background: var(--colorBgDark);}
+
+.theme-dark .themed-popout .header {background: var(--colorSidebar);}
+
+.theme-dark .messages-popout-wrap .messages-popout .message-group {background: var(--colorSidebar);}
+
+.theme-dark .user-popout .body,.theme-dark .user-popout .footer {background: var(--colorSidebar);}
+
+.theme-dark .quick-message {
+    color: var(--colorFgDark);
+    background: var(--colorBgDarker);
+    border: initial;
+}
+
+.theme-dark .popout-menu .popout-menu-separator {border-bottom-color: var(--colorSidebar);}
+
+.theme-dark .user-popout .header {background: var(--colorPanel);}
+
+.theme-dark .emoji-picker,.theme-dark .emoji-picker .sticky-header,.theme-dark .diversity-selector .popout {
+    background: var(--colorContextDark);
+    border: none;
+}
+
+.theme-dark .emoji-picker .premium-promo,.theme-dark .emoji-picker .dimmer.visible {background-color: hsla(229,12%,26%,.90);}
+
+.theme-dark .search-bar.search-bar-light {border-bottom: none;}
+
+.search-bar.search-bar-light .search-bar-inner {background: var(--colorBgDarker);}
+
+/* context menus */
+.context-menu.theme-dark,
+.theme-dark .context-menu,
+.context-menu.theme-dark .context-menu {
+    background: var(--colorContextDark);
+    box-shadow: -1px 1px 5px var(--colorPanel);
+    border: none;
+}
+
+.context-menu.theme-dark .item-subMenu,.theme-dark .search-bar.search-bar-light {background: var(--colorContextDark);}
+
+/*
+.private-channels .channel,
+.guild-channels .channel-text {
+    transition-delay: 0.1s !important;
+}
+*/
