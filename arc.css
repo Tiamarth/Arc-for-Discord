@@ -6,6 +6,7 @@
  * - thatiamarth+inq@gmail.com
  * - http://tiamarth.com/
  * - https://github.com/Tiamarth
+ * - Tiamarth#6729
  * 
  */
 
@@ -130,6 +131,11 @@ a {color: var(--colorAccent);}
 
 /* chat region and such */
 #friends,#friends .friends-table .friend-table-add-wrapper .friend-table-add-header,.flex-horizontal .flex-spacer {background: var(--colorBg);}
+
+#friends .friends-table .friends-row .friends-column-actions .friends-action,
+#friends .friends-table .friends-row .friends-column-actions .friends-action.friends-action-voice-call {
+    background-color: var(--colorAccent);
+}
 
 .message-group .message .markup a,.mentioned .mention,.mentioned .mention:hover {color: var(--colorAccent);}
 
