@@ -130,7 +130,7 @@ a {color: var(--colorAccent);}
 .toolbar-badge {border: 1px solid rgba(0,0,0,0.3) !important;}
 
 /* chat region and such */
-#friends,#friends .friends-table .friend-table-add-wrapper .friend-table-add-header,.flex-horizontal .flex-spacer {background: var(--colorBg);}
+#friends,#friends .friends-table .friend-table-add-wrapper .friend-table-add-header,.flex-horizontal .flex-spacer,.chat form .typing {background: var(--colorBg) !important;}
 
 #friends .friends-table .friends-row .friends-column-actions .friends-action,
 #friends .friends-table .friends-row .friends-column-actions .friends-action.friends-action-voice-call {
@@ -301,7 +301,7 @@ a {color: var(--colorAccent);}
 .theme-dark .ui-standard-sidebar-view .content-region,
 .theme-dark .friends-table, .theme-dark .messages-wrapper,
 .theme-dark #friends .friends-table .friend-table-add-wrapper .friend-table-add-header {
-    background: var(--colorBgDark);
+    background: var(--colorBgDark) !important;
 }
 
 .theme-dark #friends .friends-table .friends-row:hover {background: rgba(153,170,181,.2);}
@@ -318,8 +318,6 @@ a {color: var(--colorAccent);}
     color: white;
     padding: 2px 8px;
 }
-
-.theme-dark .chat form .typing {background-color: var(--colorBg);}
 
 /* pop up dialogues */
 .theme-dark .popout-menu {background: var(--colorBgDark);}
