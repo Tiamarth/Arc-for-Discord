@@ -38,7 +38,12 @@ a {color: var(--colorAccent);}
 .guilds-wrapper .guilds-add {background: var(--colorSidebar);}
 
 /* inner panel (sidebar) */
-.account,.search-bar,.guild-header header,.scroller.guild-channels,.private-channels .scroller {
+.account,
+.search-bar,
+.scroller-NXV0-d,
+.guild-header header,
+.scroller.guild-channels,
+.private-channels .scroller {
     background: var(--colorSidebar);
 }
 
