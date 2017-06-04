@@ -13,5 +13,6 @@ I personally used BeautifulDiscord while making this skin.
 
 ## Screenshots
 
-- [Arc Dark](https://raw.githubusercontent.com/Tiamarth/Arc-for-Discord/master/scrots/arc-dark.png)
-- [Arc Darker](https://raw.githubusercontent.com/Tiamarth/Arc-for-Discord/master/scrots/arc-darker.png)
+Arc Dark: [theme](https://raw.githubusercontent.com/Tiamarth/Arc-for-Discord/master/scrots/arc-dark.png) | [code blocks](https://raw.githubusercontent.com/Tiamarth/Arc-for-Discord/master/scrots/arc-dark_codeblock.png) | [settings menu](https://raw.githubusercontent.com/Tiamarth/Arc-for-Discord/master/scrots/arc-dark_settings.png)
+
+Arc Darker: [theme](https://raw.githubusercontent.com/Tiamarth/Arc-for-Discord/master/scrots/arc-darker.png) | [code blocks](https://raw.githubusercontent.com/Tiamarth/Arc-for-Discord/master/scrots/arc-darker_codeblock.png) | [settings menu](https://raw.githubusercontent.com/Tiamarth/Arc-for-Discord/master/scrots/arc-darker_settings.png)
