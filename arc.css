@@ -33,7 +33,7 @@ a {color: var(--colorAccent);}
 /* server panel */
 .guilds-wrapper {background: var(--colorPanel);}
 
-.guild-inner,.guild.selected:before {background-color: var(--colorAccent) !important;}
+.friends-icon,.guild.selected:before {background-color: var(--colorAccent) !important;}
 
 .guilds-wrapper .guilds-add {background: var(--colorSidebar);}
 
@@ -65,21 +65,21 @@ a {color: var(--colorAccent);}
 
 .icon-friends {background-color: var(--colorAccent) !important;}
 
-.private-channels .channel:hover,
-.private-channels .channel.selected,
-.guild-channels .channel-text.selected,
-.guild-channels .channel-text:hover,
-.guild-channels .channel-voice.selected,
-.guild-channels .channel-voice:hover {
+.channel.private:hover,
+.channel.channel-text:hover,
+.channel.channel-voice:hover,
+.channel.channel-text.selected,
+.channel.channel-voice.selected,
+.private-channels .channel.selected {
     color: var(--colorAccentFg);
     background: var(--colorAccent);
     transition: var(--transitTime);
     border-radius: 0px;
 }
 
-.private-channels .channel:before,.guild-channels .channel-text:before {display: none;}
+.guild-channels .channel-text .channel-name:before {color: var(--colorAccentFg) !important;}
 
-.guild-channels .channel-text .channel-name:before {color: var(--colorFgDark) !important;}
+.private-channels .channel:before,.guild-channels .channel-text:before {display: none;}
 
 .account {border-top: 1px solid var(--colorPanel);}
 
@@ -139,7 +139,7 @@ a {color: var(--colorAccent);}
 
 #friends .friends-table .friends-row .friends-column-actions .friends-action,
 #friends .friends-table .friends-row .friends-column-actions .friends-action.friends-action-voice-call {
-    background-color: var(--colorAccent);
+    background-color: var(--colorAccent) !important;
 }
 
 .message-group .message .markup a,.mentioned .mention,.mentioned .mention:hover {color: var(--colorAccent);}
@@ -150,17 +150,15 @@ a {color: var(--colorAccent);}
 }
 
 .message-group .comment .markup code.inline {
-    font-family: Consolas,Liberation Mono,Menlo,Courier,monospace;
+    font-family: Ubuntu Mono;
     font-size: 14px;
     padding: 2px 8px;
     border-radius: 0;
 }
 
-.chat .user-name,.system-message .system-message-content a {color: var(--colorAccent) !important;}
-
 .markup code {
     color: var(--colorFg);
-    font-family: Consolas,Liberation Mono,Menlo,Courier,monospace;
+    font-family: Ubuntu Mono;
     background: white;
     border: solid 1px #e0e0e0;
 }
@@ -169,9 +167,11 @@ a {color: var(--colorAccent);}
 
 .theme-light .hljs {
     color: var(--colorFg);
-    font-family: Consolas,Liberation Mono,Menlo,Courier,monospace;
+    font-family: Ubuntu Mono;
     padding: 2px 8px;
 }
+
+.chat .user-name,.system-message .system-message-content a {color: var(--colorAccent) !important;}
 
 /* pop up dialogues */
 .popout-menu .popout-menu-item {transition-delay: var(--transitDelay);}
@@ -225,12 +225,18 @@ a {color: var(--colorAccent);}
 /* settings dialogue and such */
 .ui-standard-sidebar-view .sidebar-region .scroller {background: var(--colorSidebar);}
 
+.ui-tab-bar.SIDE .ui-tab-bar-item {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
 .ui-tab-bar.SIDE .ui-tab-bar-item.selected,
 .ui-tab-bar.SIDE .ui-tab-bar-item:hover,
 .ui-tab-bar.SIDE .ui-tab-bar-item:active {
     color: var(--colorAccentFg);
     background: var(--colorAccent);
     transition: var(--transitTime);
+    border-radius: 0;
 }
 
 .ui-tab-bar.SIDE .ui-tab-bar-item {transition-delay: var(--transitDelay);}
@@ -239,7 +245,7 @@ a {color: var(--colorAccent);}
 
 .ui-tab-bar.SIDE .ui-tab-bar-item.brand:hover {color: var(--colorAccentFg);}
 
-._3Mv0RaJ0,
+.buttonBrandFilled-3Mv0Ra,
 .ui-slider .slider-bar-fill,
 .ui-switch-checkbox:checked+.ui-switch,
 .ui-card.ui-card-primary.flex-horizontal.margin-bottom-8.checked.editable {
