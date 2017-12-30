@@ -23,19 +23,24 @@
     --panel: #353945;/* server sidebar */
     --sidebar: #383C4a;/* channel sidebar */
     --fg: #7a8b94;/* text */
-        --fgDark: #d3dae3;/* text on dark theme */
-        --fgDarkLowContrast: #767e83;/* low contrast text on dark theme */
+        --fgDark: #d3dae3;
+        --fgDarkLowContrast: #767e83;
     --bg: #f5f6f7;/* background */
-        --bgDark: #404552;/* dark background */
-        --bgDarker: #2d323d;/* even darker background */
+        --bgDark: #404552;
+        --bgDarker: #2d323d;
+            --butHoverBg: ;/* background on buttons when hovered */
+                --butHoverBgDark: #525869;
+                --butHoverBgDarker: #3f4654;
+            --chatInputBg: #383C4a;/* background in chat input */
+            --contextDark: #3f4654;/* context menu background on dark theme */
+            --toolbar: #353945;/* toolbar background */
     --accent: #5294e2;/* accent (blue stuff) */
-        --accentFg: white;/* text on accents */
-    --buttonHoverBg: #3f4654;/* background on buttons when hovered */
-    --chatInputBg: #383C4a;/* background in chat input */
-    --contextDark: #3f4654;/* context menu background on dark theme */
+        --accentFg: white;
+    --online: #5294e2;/* online status indicator */
+        --away: #e6b807;
+        --busy: #ea0d0b;
     --divider: #383C4a;/* dividers between messages in chat */
-    --panelDivider: rgba(0,0,0,0.3);/* dividers between elements in panels */
-    --toolbar: #353945;/* toolbar background */
+        --panelDivider: rgba(0,0,0,0.3);
     --time: 0.3s;/* time it takes animations to complete */
         --delay: 0.1s;/* time before animations begin once triggered */
 }
@@ -100,7 +105,7 @@ a {color: var(--accent);}
 
 .channel.btn-friends.selected a {background: transparent;}
 .channel.selected,.channel.selected:hover,.channel.btn-friends.selected:hover {background: var(--accent);}
-.channel:hover,.channel.btn-friends:hover {background: var(--buttonHoverBg);}
+.channel:hover,.channel.btn-friends:hover {background: var(--butHoverBgDarker);}
 
 .channel:hover a,
 .channel.selected a,
@@ -118,13 +123,12 @@ a {color: var(--accent);}
 
 .username {color: var(--fgDark);}
 .discriminator {color: var(--fgDarkLowContrast);}
-.status-online {background: var(--accent);}
 
 .iconButtonDefault-3QZh-A.iconButton-3mKjyp.button-1aU9q1.small-1ChI_f {filter: opacity(45%);}
 
 .button-1aU9q1:hover,
 .iconButtonDefault-3QZh-A.iconButton-3mKjyp.button-1aU9q1.small-1ChI_f:hover {
-    background-color: var(--buttonHoverBg);
+    background-color: var(--butHoverBgDarker);
 }
 
 .button-1aU9q1 {filter: opacity(45%);}
@@ -136,21 +140,25 @@ a {color: var(--accent);}
 /* friends content */
 .theme-dark #friends,.theme-dark .friends-table {background-color: var(--bgDark);}
 .friends-column.friends-column-status {display: none;}
-.theme-dark #friends .friends-table .friends-table-header {border-bottom-color: var(--divider);}
+#friends .friends-table .friends-table-header {display: none;}
+#friends .friends-table .friends-row {height: 40px !important;}
+.theme-dark #friends .friends-table .friends-row+.friends-row {border-top: initial;}
 
-#friends .friends-table .friends-row {
-    height: 45px !important;
-    border: initial;
+.theme-dark #friends .friends-table .friends-row:hover {
+    background: var(--butHoverBgDark);
     box-shadow: initial;
 }
 
 #friends .friends-table .friends-column-name {width: auto;}
-/*#friends .friends-table .friends-column-status {width: 30px;}*/
 #friends .friends-table .friends-row .friends-column-status .status-text {display: none;}
 
 #friends .friends-table .friends-row .friends-column+.friends-column {
+    width: 30px;
+    margin-right: 15px;
     margin-left: -25px;
 }
+
+.theme-dark #friends .friends-table .friends-row:hover .friends-column.friends-column-status {margin-left: 5px;}
 
 /* chat */
 /* chat toolbar */
@@ -180,9 +188,7 @@ a {color: var(--accent);}
 }
 
 .iconBadge-1FYlQB {background-color: var(--accent)}
-
-.iconInactive-WWHQEI:hover {background-color: var(--buttonHoverBg);}
-
+.iconInactive-WWHQEI:hover {background-color: var(--butHoverBgDarker);}
 .search-2--6aU {margin: 0;}
 
 .theme-dark .search .search-bar {
@@ -294,6 +300,11 @@ a {color: var(--accent);}
 }
 
 .theme-dark .inner-3if5cm {background-color: var(--chatInputBg);}
+
+/* status indicators */
+.status-online {background: var(--online);}
+.status-idle {background: var(--away);}
+.status-dnd {background: var(--busy);}
 
 /* scrollbars */
 ::-webkit-scrollbar {
