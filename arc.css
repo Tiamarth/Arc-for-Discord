@@ -123,7 +123,8 @@ a {color: var(--accent);}
 }
 
 .message-group:not(.has-divider),
-.theme-dark .message-group:not(.has-divider) {
+.theme-dark .message-group:not(.has-divider),
+.message-group.has-divider.hide-overflow.compact {
     margin: -9px 10px -3px 10px;
     border-bottom-color: transparent;
 }
@@ -150,11 +151,11 @@ a {color: var(--accent);}
     background-color: var(--bgDark);
 }
 
-.message-group.has-divider {
+/*.theme-dark .system-message .system-message-content {
     margin: 0;
     margin-left: 20px;
     padding: 0;
-}
+}*/
 
 .message-group.compact .message {padding-bottom: 0.3px;}
 
