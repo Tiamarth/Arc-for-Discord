@@ -1,53 +1,282 @@
 /* I wrote this CSS to make Discord integrate with
  * the Arc theme for Linux.
  * 
+ * If you want to edit the colors of this theme
+ * it should mostly be as easy as changing the
+ * values in :root
+ * 
  * Author: Tiamarth
  * 
- * - thatiamarth+inq@gmail.com
- * - http://tiamarth.com/
+ * - tiabusy@gmail.com
  * - https://github.com/Tiamarth
  * - Tiamarth#6729
+ * - http://tiamarth.com/
+ * 
+ * CURRENT VERSION: 0.7
+ * 
+ * LICENSE: GNU General Public License v3.0 | https://github.com/Tiamarth/Arc-for-Discord/blob/master/LICENSE
  * 
  */
 
+/* color palette */
 :root {
-    --colorPanel: #2f343f;
-    --colorSidebar: #353945;
-    --colorFg: #7a8b94;
-        --colorFgDark: #d3dae3;
-        --colorFgDarker: #767e83;
-    --colorBg: #f5f6f7;
-        --colorBgDark: #3C4351;
-        --colorBgDarker: #2A2d37;
-    --colorContextDark: #3b3e4b;
-    --colorAccent: #5294e2;
-    --colorAccentFg: white;
-    --transitTime: 0.3s;
-        --transitDelay: 0.1s;
+    --panel: #353945;/* server sidebar */
+    --sidebar: #383C4a;/* channel sidebar */
+    --fg: #7a8b94;/* text */
+        --fgDark: #d3dae3;/* text on dark theme */
+        --fgDarkLowContrast: #767e83;/* low contrast text on dark theme */
+    --bg: #f5f6f7;/* background */
+        --bgDark: #404552;/* dark background */
+        --bgDarker: #2d323d;/* even darker background */
+    --accent: #5294e2;/* accent (blue stuff) */
+        --accentFg: white;/* text on accents */
+    --buttonHoverBg: #3f4654;/* background on buttons when hovered */
+    --chatInputBg: #383C4a;/* background in chat input */
+    --contextDark: #3f4654;/* context menu background on dark theme */
+    --divider: #383C4a;/* dividers between messages in chat */
+    --toolbar: #353945;/* toolbar background */
+    --time: 0.3s;/* time it takes animations to complete */
+        --delay: 0.1s;/* time before animations begin once triggered */
 }
+
+/*
+* {border: initial !important;box-shadow: initial !important;
+* {font-family: monospace !important;}
+html,body,div,span,p {color: var(--fg);}
+*/
+
+a {color: var(--accent);}
+
+/* server sidebar (panel) */
+.guilds-wrapper {
+    background-color: var(--panel);
+    border: initial;
+    box-shadow: initial;
+}
+
+.unread-mentions-indicator-top .unread-mentions-bar {box-shadow: initial;}
+
+.guild-separator:after {background: var(--bgDarker) !important;}
+.friends-icon {background-color: var(--accent);}
+.guild.guilds-add {background-color: var(--bgDarker);}
+
+/* channel sidebar */
+.channels-3g2vYe {width: 210px;}
+.scroller-fzNley {padding-top: 1px !important;}
+.private-channels header {margin-top: -5px;}
+
+.scroller-fzNley,
+.channels-3g2vYe,
+.container-iksrDt,
+.container-2OU7Cz,
+.container-3lnMWU,
+.private-channels .search-bar {
+    background-color: var(--sidebar);
+    border: initial;
+    box-shadow: initial;
+}
+
+.channel.btn-friends svg {color: var(--accent);}
+
+.channel.btn-friends:hover svg,
+.channel.btn-friends.selected svg {
+    color: var(--accentFg);
+}
+
+.channel.btn-friends.selected a {background: transparent;}
+.channel.selected,.channel.selected:hover,.channel.btn-friends.selected:hover {background: var(--accent);}
+.channel:hover,.channel.btn-friends:hover {background: var(--buttonHoverBg);}
+
+.channel:hover a,
+.channel.selected a,
+.channel.private:hover a,
+.channel.selected:hover a,
+.channel.selected.private a,
+.channel.btn-friends:hover a,
+.channel.selected.private:hover a {
+    color: var(--accentFg);
+    background: transparent;
+}
+
+.inner-ptMwR- .rtc-connection-status-connected {color: var(--accent);}
+.inner-ptMwR- .rtc-connection-quality-fine .ping {filter: invert(40%);}
+
+.username {color: var(--fgDark);}
+.discriminator {color: var(--fgDarkLowContrast);}
+.status-online {background: var(--accent);}
+
+.iconButtonDefault-3QZh-A.iconButton-3mKjyp.button-1aU9q1.small-1ChI_f {filter: opacity(45%);}
+
+.button-1aU9q1:hover,
+.iconButtonDefault-3QZh-A.iconButton-3mKjyp.button-1aU9q1.small-1ChI_f:hover {
+    background-color: var(--buttonHoverBg);
+}
+
+/* toolbar */
+.theme-dark .channelName-1G03vu svg {display: none;}
+.theme-dark .channelName-1G03vu {color: var(--fgDark);}
+
+/* chat */
+.theme-dark .friends-table .messages .divider:not(.red) span,
+.theme-dark .messages-wrapper .messages .divider:not(.red) span {
+    color: var(--fgDarker);
+}
+
+.message-group:not(.has-divider),
+.theme-dark .message-group:not(.has-divider) {
+    margin: -9px 10px -3px 10px;
+    border-bottom-color: transparent;
+}
+
+.chat .divider {
+    margin-top: 10px;
+    margin-bottom: 18px;
+}
+
+.message-group .comment .markup {margin-top: 1px;}
+
+.theme-dark .friends-table .messages .divider span,
+.theme-dark .friends-table .messages .divider:before,
+.theme-dark .messages-wrapper .messages .divider span,
+.theme-dark .messages-wrapper .messages .divider:before,
+.theme-dark .messages-wrapper .messages .divider:not(.red) div {
+    background-color: var(--divider);
+}
+
+.theme-dark .chat,
+.flex-spacer.flex-vertical,
+.theme-dark .messages-wrapper,
+.theme-dark .content.flex-spacer.flex-horizontal {
+    background-color: var(--bgDark);
+}
+
+.message-group.has-divider {
+    margin: 0;
+    margin-left: 20px;
+    padding: 0;
+}
+
+.message-group.compact .message {padding-bottom: 0.3px;}
+
+.message-group.compact .timestamp {width: 70px;}
+
+.timestamp,
+.message-group.compact .message .timestamp,
+.message-group.compact .message:hover .timestamp,
+.message-group.compact .message:not(.first) .timestamp,
+.system-message .system-message-content .system-message-timestamp {
+    color: var(--fgDarkLowContrast) !important;
+}
+
+.timestamp:before,
+.message-group.compact .message .timestamp:before,
+.message-group.compact .message:hover .timestamp:before,
+.message-group.compact .message:not(.first) .timestamp:before,
+.system-message .system-message-content .system-message-timestamp:before {
+    content: '[';
+    color: var(--fgDarkLowContrast) !important;
+}
+
+.timestamp:after,
+.message-group.compact .message .timestamp:after,
+.message-group.compact .message:hover .timestamp:after,
+.message-group.compact .message:not(.first) .timestamp:after,
+.system-message .system-message-content .system-message-timestamp:after {
+    content: ']';
+    color: var(--fgDarkLowContrast) !important;
+}
+
+.message-group.compact .message .markup .user-name,
+.theme-dark .message-group.compact .message .markup .user-name {
+    color: var(--accent);
+}
+
+.message-group.compact .message .markup .user-name:after,
+.theme-dark .message-group.compact .message .markup .user-name:after {
+    content: ':';
+}
+
+.system-message .system-message-content a,
+.system-message .system-message-content a:before,
+.theme-dark .system-message .system-message-content a,
+.theme-dark .system-message .system-message-content a:before {
+    color: var(--accent);
+}
+
+.system-message {margin: 10px 10px;}
+
+.system-message .system-message-icon {
+    display: none;
+    height: initial;
+    margin: 0;
+    top: 0;
+}
+
+.theme-dark .system-message .system-message-content,
+.theme-dark .message-group.compact .message .message-text .markup .message-content {
+    color: var(--fgDark);
+}
+
+.channelTextArea-os01xC {margin: 5px 0 5px -3px;}
+
+.theme-dark .chat form {
+    margin-top: 5px;
+    background-color: var(--bgDark);
+}
+
+.theme-dark .inner-3if5cm {background-color: var(--chatInputBg);}
+
+/* scrollbar */
+::-webkit-scrollbar {
+    width: 9px !important;
+    height: 9px !important;
+}
+
+::-webkit-scrollbar-track {background-color: transparent !important;}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.35) !important;
+    -webkit-border-radius: 20px !important;
+}
+
+::-webkit-scrollbar-thumb:hover {background: rgba(119,119,119,0.5) !important;}
+::-webkit-scrollbar-thumb:active {background: var(--accent) !important;}
+
+.scroller-wrap .scroller::-webkit-scrollbar-thumb,
+.scroller-wrap .scroller::-webkit-scrollbar-track-piece {
+    border: none !important;
+}
+
+.friends-table .scroller-wrap ::-webkit-scrollbar-track-piece,
+.messages-wrapper .scroller-wrap ::-webkit-scrollbar-track-piece {
+    background: transparent !important;
+}
+
+/* EVERYTHING IN THIS COMMENT IS OLD CODE THAT MOSTLY BREAKS IN RECENT VERSIONS OF DISCORD
 
 a {color: var(--colorAccent);}
 
 .tooltip {background-color: var(--colorAccent);}
 
-/* server panel */
+* server panel *
 .guilds-wrapper {background: var(--colorPanel);}
 
 .friends-icon,.guild.selected:before {background-color: var(--colorAccent) !important;}
 
 .guilds-wrapper .guilds-add {background: var(--colorSidebar);}
 
-/* inner panel (sidebar) */
-.account,
+* inner panel (sidebar) *
 .search-bar,
-.scroller-NXV0-d,
+.container-iksrDt,
+.scrollerWrap-2uBjct,
 .guild-header header,
 .scroller.guild-channels,
-.private-channels .scroller {
+.private-channels .scroller,
+.private-channels .search-bar {
     background: var(--colorSidebar);
 }
 
-.private-channels .search-bar,.guild-header header {
+.guild-header header {
     box-shadow: initial;
     border-bottom: 1px solid var(--colorPanel);
 }
@@ -67,7 +296,12 @@ a {color: var(--colorAccent);}
 
 .margin-reset svg {filter: brightness(100);}
 
-.contentSelectedText-3j5CXt,.contentHoveredText-2HYGIY {background-color: transparent}
+.contentHoveredText-2HYGIY,
+.contentSelectedText-3j5CXt,
+.private-channels .channel:hover a,
+.private-channels .channel.selected a {
+    background-color: transparent
+}
 
 .nameHoveredText-2FFqiz {
     color: var(--colorAccentFg);
@@ -101,9 +335,9 @@ a {color: var(--colorAccent);}
 
 .account .btn-group {border: 1px solid var(--colorPanel);}
 
-/* .private-channels .scroller, */
+* .private-channels .scroller, *
 
-/* toolbar */
+* toolbar *
 #friends .friends-header,.title-wrap {
     border-bottom: 1px solid var(--colorPanel) !important;
     background: var(--colorSidebar) !important;
@@ -136,6 +370,9 @@ a {color: var(--colorAccent);}
 
 .search-bar input,
 .search .search-bar,
+.guild-header header,
+.private-channels .search-bar,
+.search-bar .search-bar-inner,
 .search .DraftEditor-root .public-DraftEditorPlaceholder-root {
     color: var(--colorFgDarker) !important;
     background-color: var(--colorBgDarker) !important;
@@ -145,7 +382,7 @@ a {color: var(--colorAccent);}
 
 .toolbar-badge {border: 1px solid rgba(0,0,0,0.3) !important;}
 
-/* chat region and such */
+* chat region and such *
 #friends,#friends .friends-table .friend-table-add-wrapper .friend-table-add-header,.flex-horizontal .flex-spacer,.chat form .typing {background: var(--colorBg) !important;}
 
 #friends .friends-table .friends-row .friends-column-actions .friends-action,
@@ -184,7 +421,7 @@ a {color: var(--colorAccent);}
 
 .chat .user-name,.system-message .system-message-content a {color: var(--colorAccent) !important;}
 
-/* pop up dialogues */
+* pop up dialogues *
 .popout-menu .popout-menu-item {transition-delay: var(--transitDelay);}
 
 .popout-menu .popout-menu-item:hover,.popout-menu .popout-menu-item.invite:hover {
@@ -212,7 +449,7 @@ a {color: var(--colorAccent);}
 
 .search-bar.search-bar-light input {background-color: transparent !important;}
 
-/* server member sidebar */
+* server member sidebar *
 .channel-members {background: var(--colorSidebar) !important;}
 
 .channel-members .member.popout-open,
@@ -230,12 +467,12 @@ a {color: var(--colorAccent);}
 
 .channel-members .member:hover .member-activity {color: var(--colorAccentFg);}
 
-/* online status */
+* online status *
 .status-online {background: var(--colorAccent);}
 
 .channel-members .avatar-small .status {border: 1px solid rgba(0,0,0,0.3) !important;}
 
-/* settings dialogue and such */
+* settings dialogue and such *
 .ui-standard-sidebar-view .sidebar-region .scroller {background: var(--colorSidebar);}
 
 .ui-tab-bar.SIDE .ui-tab-bar-item {
@@ -265,7 +502,7 @@ a {color: var(--colorAccent);}
     background: var(--colorAccent) !important;
 }
 
-/* context menus */
+* context menus *
 .context-menu .item:hover,
 .context-menu .item-subMenu:hover {
     color: var(--colorAccentFg) !important;
@@ -289,35 +526,8 @@ a {color: var(--colorAccent);}
     background: url(/assets/e4afe52f6863408a35654a6e5fd69ba9.svg) 155px 50% no-repeat #5294e2 !important;
 }
 
-/* scrollbars */
-::-webkit-scrollbar {
-    width: 9px !important;
-    height: 9px !important;
-}
-
-::-webkit-scrollbar-track {background-color: transparent !important;}
-
-::-webkit-scrollbar-thumb {
-    background: rgba(0,0,0,0.35) !important;
-    -webkit-border-radius: 20px !important;
-}
-
-::-webkit-scrollbar-thumb:hover {background: rgba(119,119,119,0.5) !important;}
-
-::-webkit-scrollbar-thumb:active {background: var(--colorAccent) !important;}
-
-.scroller-wrap .scroller::-webkit-scrollbar-thumb,
-.scroller-wrap .scroller::-webkit-scrollbar-track-piece {
-    border: none !important;
-}
-
-.friends-table .scroller-wrap ::-webkit-scrollbar-track-piece,
-.messages-wrapper .scroller-wrap ::-webkit-scrollbar-track-piece {
-    background: transparent !important;
-}
-
-/* dark specific styles */
-/* chat region and such */
+* dark specific styles *
+* chat region and such *
 .theme-dark #friends,
 .theme-dark .chat form,
 .theme-dark .chat form .typing,
@@ -343,7 +553,7 @@ a {color: var(--colorAccent);}
     padding: 2px 8px;
 }
 
-/* pop up dialogues */
+* pop up dialogues *
 .theme-dark .popout-menu {background: var(--colorBgDark);}
 
 .theme-dark .themed-popout {background: var(--colorBgDark);}
@@ -375,7 +585,7 @@ a {color: var(--colorAccent);}
 
 .theme-dark .search-bar.search-bar-light .search-bar-inner {background: var(--colorBgDarker);}
 
-/* context menus */
+* context menus *
 .context-menu.theme-dark,
 .theme-dark .context-menu,
 .context-menu.theme-dark .context-menu {
@@ -386,9 +596,10 @@ a {color: var(--colorAccent);}
 
 .context-menu.theme-dark .item-subMenu,.theme-dark .search-bar.search-bar-light {background: var(--colorContextDark);}
 
-/*
+*
 .private-channels .channel,
 .guild-channels .channel-text {
     transition-delay: 0.1s !important;
 }
+*
 */
