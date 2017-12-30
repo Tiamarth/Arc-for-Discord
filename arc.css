@@ -12,7 +12,7 @@
  * - Tiamarth#6729
  * - http://tiamarth.com/
  * 
- * CURRENT VERSION: 0.7
+ * CURRENT VERSION: 0.9
  * 
  * LICENSE: GNU General Public License v3.0 | https://github.com/Tiamarth/Arc-for-Discord/blob/master/LICENSE
  * 
@@ -34,6 +34,7 @@
     --chatInputBg: #383C4a;/* background in chat input */
     --contextDark: #3f4654;/* context menu background on dark theme */
     --divider: #383C4a;/* dividers between messages in chat */
+    --panelDivider: rgba(0,0,0,0.3);/* dividers between elements in panels */
     --toolbar: #353945;/* toolbar background */
     --time: 0.3s;/* time it takes animations to complete */
         --delay: 0.1s;/* time before animations begin once triggered */
@@ -56,14 +57,28 @@ a {color: var(--accent);}
 
 .unread-mentions-indicator-top .unread-mentions-bar {box-shadow: initial;}
 
-.guild-separator:after {background: var(--bgDarker) !important;}
+.guild-separator:after {background: var(--panelDivider) !important;}
 .friends-icon {background-color: var(--accent);}
 .guild.guilds-add {background-color: var(--bgDarker);}
 
 /* channel sidebar */
 .channels-3g2vYe {width: 210px;}
-.scroller-fzNley {padding-top: 1px !important;}
-.private-channels header {margin-top: -5px;}
+.scroller-fzNley {padding-top: 0 !important;}
+
+.private-channels header {
+    color: transparent;
+    margin: -9px 0 -18px 0;
+}
+
+.private-channels header:after,
+.private-channels header:before {
+    position: absolute;
+    right: 20%;
+    left: 20%;
+    height: 2px;
+    background: var(--panelDivider);
+    content: ' ';
+}
 
 .scroller-fzNley,
 .channels-3g2vYe,
@@ -113,6 +128,16 @@ a {color: var(--accent);}
 }
 
 /* toolbar */
+.titleWrapper-3Vi_wz,
+.theme-dark .title-qAcLxz {
+    background: var(--toolbar);
+}
+
+.theme-dark .title-qAcLxz {
+    height: 40px;
+    box-shadow: initial;
+}
+
 .theme-dark .channelName-1G03vu svg {display: none;}
 .theme-dark .channelName-1G03vu {color: var(--fgDark);}
 
@@ -141,7 +166,7 @@ a {color: var(--accent);}
 .theme-dark .messages-wrapper .messages .divider span,
 .theme-dark .messages-wrapper .messages .divider:before,
 .theme-dark .messages-wrapper .messages .divider:not(.red) div {
-    background-color: var(--divider);
+    background-color: var(--divider) !important;
 }
 
 .theme-dark .chat,
@@ -151,14 +176,7 @@ a {color: var(--accent);}
     background-color: var(--bgDark);
 }
 
-/*.theme-dark .system-message .system-message-content {
-    margin: 0;
-    margin-left: 20px;
-    padding: 0;
-}*/
-
 .message-group.compact .message {padding-bottom: 0.3px;}
-
 .message-group.compact .timestamp {width: 70px;}
 
 .timestamp,
