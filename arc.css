@@ -41,7 +41,7 @@
 }
 
 /*
-* {border: initial !important;box-shadow: initial !important;
+* {border: initial !important;box-shadow: initial !important;}
 * {font-family: monospace !important;}
 html,body,div,span,p {color: var(--fg);}
 */
@@ -127,7 +127,33 @@ a {color: var(--accent);}
     background-color: var(--buttonHoverBg);
 }
 
-/* toolbar */
+.button-1aU9q1 {filter: opacity(45%);}
+
+/* friends list */
+/* friends toolbar */
+
+
+/* friends content */
+.theme-dark #friends,.theme-dark .friends-table {background-color: var(--bgDark);}
+.friends-column.friends-column-status {display: none;}
+.theme-dark #friends .friends-table .friends-table-header {border-bottom-color: var(--divider);}
+
+#friends .friends-table .friends-row {
+    height: 45px !important;
+    border: initial;
+    box-shadow: initial;
+}
+
+#friends .friends-table .friends-column-name {width: auto;}
+/*#friends .friends-table .friends-column-status {width: 30px;}*/
+#friends .friends-table .friends-row .friends-column-status .status-text {display: none;}
+
+#friends .friends-table .friends-row .friends-column+.friends-column {
+    margin-left: -25px;
+}
+
+/* chat */
+/* chat toolbar */
 .titleWrapper-3Vi_wz,
 .theme-dark .title-qAcLxz {
     background: var(--toolbar);
@@ -141,7 +167,31 @@ a {color: var(--accent);}
 .theme-dark .channelName-1G03vu svg {display: none;}
 .theme-dark .channelName-1G03vu {color: var(--fgDark);}
 
-/* chat */
+.title-qAcLxz .status {
+    top: 1px;
+    margin-left: 0;
+}
+
+.iconInactive-WWHQEI {
+    padding: 5px;
+    margin-right: 0;
+    margin-left: 0;
+    filter: opacity(45%);
+}
+
+.iconBadge-1FYlQB {background-color: var(--accent)}
+
+.iconInactive-WWHQEI:hover {background-color: var(--buttonHoverBg);}
+
+.search-2--6aU {margin: 0;}
+
+.theme-dark .search .search-bar {
+    background-color: rgba(0,0,0,0.2);
+    border: 1px solid rgba(0,0,0,.1);
+    border-radius: 4px;
+}
+
+/* chat content */
 .theme-dark .friends-table .messages .divider:not(.red) span,
 .theme-dark .messages-wrapper .messages .divider:not(.red) span {
     color: var(--fgDarker);
@@ -245,7 +295,7 @@ a {color: var(--accent);}
 
 .theme-dark .inner-3if5cm {background-color: var(--chatInputBg);}
 
-/* scrollbar */
+/* scrollbars */
 ::-webkit-scrollbar {
     width: 9px !important;
     height: 9px !important;
