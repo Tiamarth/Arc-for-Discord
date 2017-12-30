@@ -1,4 +1,4 @@
-#Note:
+# Note:
 
 I'm presently in the middle of completely rewriting this skin to make sure it's completely compatible with recent versions of Discord (stable). Right now it's still pretty broken but it should be pretty useable if you set Discord to use the dark theme.
 
