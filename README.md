@@ -12,7 +12,6 @@ Arc for Discord is a custom css file that integrates Discord's UI with [Arc,](ht
 - use Arc's sidebar color even on light theme
 - flatter and more compact ui
 - less cluttered chat
-- more minimal scrollbars
 - add a colon after usernames in chat
 - remove @ before username in dm header
 - always display timestamps on all messages
