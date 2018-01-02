@@ -1,6 +1,6 @@
 # Note:
 
-I'm presently in the middle of completely rewriting this skin to make sure it's completely compatible with recent versions of Discord (stable). Right now it's still pretty broken but it should be pretty useable if you set Discord to use the dark theme.
+I'm currently rewriting this skin to make sure it's compatible with recent versions of Discord (stable.) It's pretty broken, but should be mostly useable if you set Discord to use the dark theme.
 
 # Arc-for-Discord
 
@@ -13,8 +13,10 @@ Arc for Discord is a custom css file that integrates Discord's UI with [Arc,](ht
 - flatter and more compact ui
 - less cluttered chat
 - add a colon after usernames in chat
-- remove @ before username in dm header
+- remove username in dm header
 - always display timestamps on all messages
+
+Chat can display 75% more messages in AFD than default!
 
 ## Install
 
