@@ -12,7 +12,7 @@
  * - Tiamarth#6729
  * - http://tiamarth.com/
  * 
- * CURRENT VERSION: 0.9.4
+ * CURRENT VERSION: 0.9.8
  * 
  * LICENSE: GNU General Public License v3.0 | https://github.com/Tiamarth/Arc-for-Discord/blob/master/LICENSE
  * 
@@ -42,7 +42,7 @@
         --busy: #ea0d0b;
     --divider: #383C4a;/* dividers between messages in chat */
         --panelDivider: rgba(0,0,0,0.3);
-    --time: 0.3s;/* time it takes animations to complete */
+    --time: 0.1s;/* time it takes animations to complete */
         --delay: 0.1s;/* time before animations begin once triggered */
 }
 
@@ -52,6 +52,8 @@
 * {transition-duration: var(--time);transition-delay: var(--delay);}
 html,body,div,span,p {color: var(--fg);}
 */
+
+/** {transform: scale(2);}*/
 
 /* animations */
 /* channel sidebar */
@@ -64,8 +66,10 @@ html,body,div,span,p {color: var(--fg);}
 /* toolbar */
 .iconInactive-WWHQEI,
 /* friends toolbar */
-.tab-bar-item
+.tab-bar-item,
 /* friends content */
+#friends .friends-table .friends-row,
+#friends .friends-table .friends-row .friends-column+.friends-column
 /* chat toolbar */
 /* chat content */
  {
@@ -84,7 +88,13 @@ a {color: var(--accent);}
 
 .unread-mentions-indicator-top .unread-mentions-bar {box-shadow: initial;}
 
-.guild-separator:after {background: var(--panelDivider) !important;}
+.guilds-wrapper .guild-separator {
+    margin: -2px 0;
+    height: 1px;
+    background-color: transparent;
+    padding: initial;
+}
+
 .friends-icon {background-color: var(--accent);}
 .guild.guilds-add {background-color: var(--bgDarker);}
 
@@ -127,6 +137,7 @@ a {color: var(--accent);}
 }
 
 .inner-ptMwR- .rtc-connection-status-connected {color: var(--accent);}
+.inner-ptMwR- .rtc-connection-quality-fine .ping {filter: invert(40%);}
 .username {color: var(--fgDark);}
 
 .discriminator {
@@ -174,10 +185,12 @@ a {color: var(--accent);}
 .theme-dark #friends .friends-table .friends-row+.friends-row {border-top: initial;}
 
 .theme-dark #friends .friends-table .friends-row:hover {
+    margin: 0 !important;
     background: var(--butHoverBgDark);
     box-shadow: initial;
 }
 
+.theme-dark #friends .friends-table .friends-row {margin: 0 10px !important;}
 #friends .friends-table .friends-column-name {width: auto;}
 #friends .friends-table .friends-row .friends-column-status .status-text {display: none;}
 
@@ -187,7 +200,9 @@ a {color: var(--accent);}
     margin-left: -25px;
 }
 
+
 .theme-dark #friends .friends-table .friends-row:hover .friends-column.friends-column-status {margin-left: 5px;}
+.friends-column.friends-column-actions {display: none !important;}
 
 /* chat toolbar */
 .titleWrapper-3Vi_wz,
@@ -227,18 +242,13 @@ a {color: var(--accent);}
 .message-group.has-divider,
 .message-group:not(.has-divider),
 .theme-dark .message-group:not(.has-divider) {
-    margin: -15px 0 -10px 5px;
+    margin: -14px 0 -8px 5px;
     border-bottom-color: transparent;
 }
 
 .message {padding-bottom: initial !important;}
-.message-text {margin: -1px;}
-
-.chat .divider {
-    margin-top: 15px;
-    margin-bottom: 23px;
-}
-
+.message-text {margin: -2.5px 0 -2px 0;}
+.chat .divider {margin: 15px 0 23px 0;}
 .message-group .comment .markup {margin-top: 1px;}
 
 .theme-dark .friends-table .messages .divider span,
@@ -324,6 +334,19 @@ a {color: var(--accent);}
 }
 
 .theme-dark .inner-3if5cm {background-color: var(--chatInputBg);}
+
+/* server menu */
+.header-1tSljs {
+    height: 40px;
+    font-weight: initial;
+    box-shadow: initial;
+    background-color: var(--sidebar);
+}
+
+.header-1tSljs:hover {background-color: var(--butHoverBgDarker);}
+
+/* server user list */
+.theme-dark .channel-members {background-color: var(--sidebar);}
 
 /* status indicators */
 .status-online {background: var(--online);}
