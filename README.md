@@ -4,12 +4,12 @@ I'm currently rewriting this skin to make sure it's compatible with recent versi
 
 # Arc-for-Discord
 
-Arc for Discord is a custom css file that integrates Discord's UI with [Arc,](https://github.com/horst3180/Arc-theme) a popular theme for Linux.
+Arc for Discord is a custom css file that integrates Discord's UI with [Arc,](https://github.com/horst3180/Arc-theme) a popular GTK theme.
 
-## Features:
+## Features
 
 - use Arc's scrollbars
-- use Arc's sidebar color even on light theme
+- use Arc's colors
 - flatter and more compact ui
 - less cluttered chat
 - add a colon after usernames in chat
@@ -17,6 +17,14 @@ Arc for Discord is a custom css file that integrates Discord's UI with [Arc,](ht
 - always display timestamps on all messages
 
 Chat can display 75% more messages in AFD than default!
+
+**Planned**
+
+- use Arc Darker colors on light theme
+- additional css file to integrate with Arc Grey
+- additional css file for Arc on light theme
+- make additional compactness optional
+- scale down ui
 
 ## Install
 
