@@ -12,7 +12,7 @@
  * - Tiamarth#6729
  * - http://tiamarth.com/
  * 
- * CURRENT VERSION: 0.9.9
+ * CURRENT VERSION: 0.9.9.1
  * 
  * LICENSE: GNU General Public License v3.0 | https://github.com/Tiamarth/Arc-for-Discord/blob/master/LICENSE
  * 
@@ -20,6 +20,8 @@
 
 /* color palette */
 :root {
+    --white: white;
+    --black: black;
     --sidebarServers: #353945;
     --sidebarChannels: #383C4a;
     --text: #7a8b94;
@@ -56,6 +58,13 @@ html,body,div,span,p {color: var(--text);}
 * {transform: scale(2);}
 */
 
+a {color: var(--bgAccent);}
+
+.badge {
+    color: var(--black) !important;
+    background-color: var(--white) !important;
+}
+
 /* animations */
 a,
 /* channel sidebar */
@@ -78,32 +87,62 @@ a,
 .private-channel-call.minimum .private-channel-call-actions .center button,
 /* chat toolbar */
 /* chat content */
-.chat .new-messages-bar
+.chat .new-messages-bar,
+.chat .jump-to-present-bar
  {
     transition-duration: var(--time) !important;
     transition-delay: var(--delay) !important;
 }
 
-a {color: var(--bgAccent);}
+/* server sidebar */
+.unread-mentions-indicator-top .unread-mentions-bar {box-shadow: initial;}
 
-/* server sidebar (panel) */
 .guilds-wrapper {
+    width: 50px;
     background-color: var(--sidebarServers);
     border: initial;
     box-shadow: initial;
 }
 
-.unread-mentions-indicator-top .unread-mentions-bar {box-shadow: initial;}
-
 .guilds-wrapper .guild-separator {
-    margin: -2px 0;
+    margin: -3px 0;
     height: 1px;
     background-color: transparent;
     padding: initial;
 }
 
 .friends-icon {background-color: var(--bgAccent);}
-.guild.guilds-add {background-color: var(--bgDarker);}
+.friends-online {display: none;}
+.guilds-wrapper .guilds {padding: 10px 0 0 5px;}
+
+.guilds-wrapper .guilds .guild .guild-inner a {
+    width: 35px;
+    height: 35px;
+    line-height: 35px;
+}
+
+.guilds-wrapper .guilds .guild .avatar-small {background-size: 35px 35px;}
+
+.guilds-wrapper .guilds .guild,
+.guilds-wrapper .guilds .friends-icon {
+    width: 35px;
+    height: 35px;
+    background-size: 35px 35px;
+}
+
+.guilds-wrapper .guilds .guild.unread:before,
+.guilds-wrapper .guilds .guild.selected:before {
+    top: 25px;
+    left: -10px;
+    height: 25px;
+    background-color: var(--bgAccent);
+}
+
+.guild.guilds-add {
+    font-size: 30px;
+    line-height: 9px;
+    background-color: var(--bgDarker);
+}
 
 /* channel sidebar */
 .channels-3g2vYe {width: 200px;}
@@ -267,6 +306,12 @@ a {color: var(--bgAccent);}
 .buttonRedFilled-1NjJNj:hover {background-color: var(--buttonAccent);}
 
 /* chat content */
+.chat .new-messages-bar {
+    width: 100%;
+    margin-left: -20px;
+    border-radius: initial;
+}
+
 .chat .new-messages-bar {background-color: var(--bgAccent)}
 .chat .new-messages-bar:hover {background-color: var(--buttonAccent);}
 .chat .new-messages-bar button:last-child {color: var(--textAccent);}
@@ -284,7 +329,7 @@ a {color: var(--bgAccent);}
 }
 
 .message {padding-bottom: initial !important;}
-.message-text {margin: -2.5px 0 -2px 0;}
+.message-text {margin-top: -6px;}
 .chat .divider {margin: 15px 0 23px 0;}
 .message-group .comment .markup {margin-top: 1px;}
 
@@ -368,19 +413,35 @@ a {color: var(--bgAccent);}
     display: none;
 }
 
+.chat .jump-to-present-bar {
+    width: 100%;
+    margin-left: -20px;
+    border-radius: initial;
+}
+
+.chat .jump-to-present-bar {background-color: var(--bgAccent) !important;}
+.chat .jump-to-present-bar:hover {background-color: var(--buttonAccent) !important;}
+.chat .jump-to-present-bar button:last-child {color: var(--textAccent);}
 .channelTextArea-os01xC {margin: 5px 0 5px -3px;}
+.chat form {margin: 0 5px;}
 
 .theme-dark .chat form {
-    margin-top: 5px;
     background-color: var(--bgContentDark);
+    box-shadow: 0 -1px 0 var(--dividerContent);
 }
 
 .theme-dark .inner-3if5cm {background-color: var(--bgChatInput);}
 
 .typing,.theme-dark .chat form .typing {
-    background-color: transparent;
-    margin-left: -2px;
+    height: 20px;
     bottom: 42px;
+    margin-left: -2px;
+    background-color: transparent;
+}
+
+.typing .ellipsis {
+    width: 25px;
+    height: 32px;
 }
 
 .bot-tag {background: var(--bgAccent);}
@@ -415,16 +476,54 @@ a {color: var(--bgAccent);}
 
 /* server user list */
 .theme-dark .channel-members {background-color: var(--sidebarChannels);}
-.channel-members-wrap {min-width: 210px}
+.channel-members-wrap {min-width: 175px}
 .scrollerWrap-2uBjct.scrollerThemed-19vinI.themeGhost-10fio9.scrollerFade-28dRsO {width: 20px;}
 
 .theme-dark .channel-members h2 {
     color: var(--textDark);
     padding: 0 10px;
-    margin-top: 5px;
+    margin: 5px 0 -3px 0;
 }
 
-.theme-dark .channel-members .member {padding: 0 0 0 15px;}
+.channel-members .member {
+    height: 30px;
+    padding: 0 0 0 15px;
+}
+
+.channel-members .avatar-small {background: transparent !important;}
+
+.channel-members .avatar-small .status {
+    left: 0;
+    top: 9px;
+}
+
+.member-inner {
+    width: 90% !important;
+    margin-left: -25px;
+}
+
+/* code blocks */
+.theme-dark .message-group .comment .markup pre {
+    max-width: 100%;
+    margin-top: 0;
+    background: var(--bgDarker);
+    border-color: var(--bgDarker);
+}
+
+.theme-dark .message-group .comment .markup pre code {
+    line-height: .8rem;
+    color: var(--white);
+    background: var(--bgDarker);
+}
+
+.theme-dark .message-group .comment .markup code.inline {
+    line-height: .8rem;
+    font-family: Consolas,Liberation Mono,Menlo,Courier,monospace;
+    font-size: 0.75rem;
+    color: var(--white);
+    background: var(--bgDarker);
+    padding: .5em;
+}
 
 /* status indicators */
 .status-online {background: var(--online);}
