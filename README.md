@@ -26,6 +26,11 @@ Chat can display 75% more messages in AFD than default!
 - make additional compactness optional
 - scale down ui
 
+**screenshots**  
+[*album*](https://imgur.com/a/Vo8j4)  
+[*Default vs AFD*](https://i.imgur.com/YRYbkKd.png)  
+[*Default vs AFD (small window)*](https://i.imgur.com/PGEVOX0.png)
+
 ## Install
 
 Discord doesn't currently natively support custom css, but it's possible to inject custom stylesheets using third party tools such as [BeautifulDiscord](https://github.com/leovoel/BeautifulDiscord) and [BetterDiscord.](https://github.com/jiiks/betterdiscordapp) If you'd like to use Arc for Discord, you'll need to install one of those tools first.
