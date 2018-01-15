@@ -24,7 +24,6 @@ Chat can display 75% more messages in AFD than default!
 - additional css file to integrate with Arc Grey
 - additional css file for Arc on light theme
 - make additional compactness optional
-- scale down ui
 
 **screenshots**  
 [*album*](https://imgur.com/a/Vo8j4)  
