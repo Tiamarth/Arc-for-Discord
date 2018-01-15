@@ -36,10 +36,8 @@
     --bgChatInputDark: #383C4a;
     --bgToolbar: #353945;
     --bgMenu: ;
-    --bgMenu: #3f4654;
+    --bgMenuDark: #3f4654;
     --bgDarker: #2d323d;
-    --bgContext: ;
-    --bgContextDark: #3b3e4b;
     --buttonContent: #e6e7e8;
     --buttonContentDark: #4c5262;
     --buttonDarker: #4b5164;
@@ -606,14 +604,14 @@ html,body,div,span,p {color: var(--text);}
 
 .context-menu.theme-dark,
 .context-menu.theme-dark .context-menu {
-    background: var(--bgContextDark);
+    background: var(--bgMenuDark);
     box-shadow: );
     border: none;
 }
 
 .context-menu.theme-dark .item-subMenu,
 .theme-dark .search-bar.search-bar-light {
-    background: var(--bgContextDark);
+    background: var(--bgMenuDark);
 }
 
 /* scrollbars */
