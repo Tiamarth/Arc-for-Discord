@@ -12,7 +12,7 @@
  * - Tiamarth#6729
  * - http://tiamarth.com/
  * 
- * CURRENT VERSION: 0.9.9.2
+ * CURRENT VERSION: 0.9.9.3
  * 
  * LICENSE: GNU General Public License v3.0 | https://github.com/Tiamarth/Arc-for-Discord/blob/master/LICENSE
  * 
@@ -38,6 +38,8 @@
     --bgMenu: ;
     --bgMenu: #3f4654;
     --bgDarker: #2d323d;
+    --bgContext: ;
+    --bgContextDark: #3b3e4b;
     --buttonContent: #e6e7e8;
     --buttonContentDark: #4c5262;
     --buttonDarker: #4b5164;
@@ -87,7 +89,10 @@ html,body,div,span,p {color: var(--text);}
 /* chat toolbar */
 /* chat content */
 .chat .new-messages-bar,
-.chat .jump-to-present-bar
+.chat .jump-to-present-bar,
+/* context menus */
+.context-menu .item,
+.context-menu .item-subMenu
  {
     transition-duration: var(--time) !important;
     transition-delay: var(--delay) !important;
@@ -580,6 +585,36 @@ html,body,div,span,p {color: var(--text);}
 /* settings dialog */
 .buttonBrandFilled-3Mv0Ra,.buttonBrandFilled-3Mv0Ra:hover {background-color: var(--bgAccent);}
 .side-2nYO0F .itemSelected-3XxAMf {background-color: var(--bgAccent);}
+
+/* context menus */
+.context-menu .item:hover,
+.context-menu .item-subMenu:hover {
+    color: var(--textAccent) !important;
+    background: var(--bgAccent) !important;
+    border-radius: 0px;
+}
+
+.context-menu.theme-light .item-subMenu,
+.context-menu.theme-dark .item-subMenu {
+    background: url(/assets/e4afe52f6863408a35654a6e5fd69ba9.svg) 155px 50% no-repeat rgba(0,0,0,0) !important;
+}
+
+.context-menu.theme-light .item-subMenu:hover,
+.context-menu.theme-dark .item-subMenu:hover {
+    background: url(/assets/e4afe52f6863408a35654a6e5fd69ba9.svg) 155px 50% no-repeat #5294e2 !important;
+}
+
+.context-menu.theme-dark,
+.context-menu.theme-dark .context-menu {
+    background: var(--bgContextDark);
+    box-shadow: );
+    border: none;
+}
+
+.context-menu.theme-dark .item-subMenu,
+.theme-dark .search-bar.search-bar-light {
+    background: var(--bgContextDark);
+}
 
 /* scrollbars */
 ::-webkit-scrollbar {
