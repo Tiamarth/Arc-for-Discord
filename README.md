@@ -1,6 +1,6 @@
 # Note:
 
-I'm currently rewriting this skin to make sure it's compatible with recent versions of Discord (stable.) It's pretty broken, but should be mostly useable if you set Discord to use the dark theme.
+I'm currently rewriting this skin to make sure it's compatible with recent versions of Discord (stable.) It's a little broken, but mostly useable.
 
 # Arc-for-Discord
 
@@ -20,7 +20,6 @@ Chat can display 75% more messages in AFD than default!
 
 **Planned**
 
-- use Arc Darker colors on light theme
 - additional css file to integrate with Arc Grey
 - additional css file for Arc on light theme
 - make additional compactness optional
