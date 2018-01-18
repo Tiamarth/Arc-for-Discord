@@ -403,7 +403,8 @@
     border-bottom-color: transparent;
 }
 
-.message-group {margin-top: -13px;}
+.message-group {margin: -13px 0 0 -5px;}
+.message-group .comment {margin-right: 0;}
 .message {padding-bottom: initial !important;}
 .message-text {margin-top: -6px;}
 .chat .divider {margin: 5px 0 25px 0;}
