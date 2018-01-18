@@ -1,5 +1,7 @@
 # Note:
 
+Nearly done now. You really shouldn't have any problems unless you're frequently interacting with Discord's menus.
+
 I'm currently rewriting this skin to make sure it's compatible with recent versions of Discord (stable.) It's a little broken, but mostly useable.
 
 # Arc-for-Discord
