@@ -6,7 +6,7 @@ I'm currently rewriting this skin to make sure it's compatible with recent versi
 
 # Arc-for-Discord
 
-Arc for Discord is a custom css file that integrates Discord's UI with [Arc,](https://github.com/horst3180/Arc-theme) a popular GTK theme.
+Arc for Discord is a custom css file that integrates Discord's UI with [Arc,](https://github.com/NicoHood/arc-theme) a popular GTK theme.
 
 ## Features
 
