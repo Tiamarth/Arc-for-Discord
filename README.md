@@ -18,7 +18,7 @@ Arc for Discord is a custom css file that integrates Discord's UI with [Arc,](ht
 - remove username in dm header
 - always display timestamps on all messages
 
-Chat can display 75% more messages in AFD than default!
+Chat can display 60% more messages in AFD than default!
 
 **Planned**
 
