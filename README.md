@@ -39,3 +39,8 @@ I personally used BeautifulDiscord while making this skin, and it may not work w
 
 1. Install BeautifulDiscord.
 2. Copy the css from arc.css into the custom css file that BeautifulDiscord generates.
+
+**Need more help?** Get in touch!
+- [Join my Discord server](https://discord.gg/ZfDP2ZV)
+- [Create an issue here on GitHub](https://github.com/Tiamarth/Arc-for-Discord/issues/new)
+- [Email me](mailto:tiabusy@gmail.com)
