@@ -1,8 +1,6 @@
 # Note:
 
-Nearly done now. You really shouldn't have any problems unless you're frequently interacting with Discord's menus.
-
-I'm currently rewriting this skin to make sure it's compatible with recent versions of Discord (stable.) It's a little broken, but mostly useable.
+Because Discord's css class names change everytime it updates, it's very time consuming to manage a Discord theme. So I'm going to retire this project until custom css is supported natively in the application, because I just can't keep up with it. Sorry for any inconvenience. The css that is currently here should work just fine if you go through and manually update each class, but otherwise it's totally broken.
 
 # Arc-for-Discord
 
